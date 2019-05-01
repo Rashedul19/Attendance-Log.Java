@@ -166,3 +166,67 @@ public class AttendanceLogTest extends JFrame implements ActionListener {
 	}
 
 }
+
+
+
+-----------------------------------------------------------------------
+
+
+
+public class PersonAttend implements Comparable<PersonAttend> {
+
+	private String name;
+	private String id;
+	private String email;
+
+	// constructor to initialize all fields with given values
+	public PersonAttend(String name, String id, String email) {
+		this.name = name;
+		this.id = id;
+		this.email = email;
+	}
+
+// constructor to initialize all fields with default values
+	public PersonAttend() {
+		name = "";
+		id = "";
+		email = "";
+	}
+
+// getters and setters
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPhone() {
+		return id;
+	}
+
+	public void setPhone(String phone) {
+		this.id = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
+	public int compareTo(PersonAttend other) {
+		return this.name.compareTo(other.name);
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%-15s id: %-12s Email: %-20s", name, id, email);
+
+	}
+
+}
